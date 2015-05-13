@@ -1,0 +1,108 @@
+<ion-view view-title="Enjoy Local Music">
+	
+	<ion-content ng-controller="PlaylistCtrl" >
+		<ion-tabs class="tabs-energized tabs-striped tabs-top tabs-icon-top">
+			<ion-tab title="Home" icon="ion-home dark" >
+				
+
+				<ion-content padding="true" class="has-header homebgd">
+					<br><div class="card "> 
+						<img ng-src="img/x-maleya.jpg"  alt="Artist#" width="100%" height="100%" class="homeImgbgd" />
+						
+					</div>
+					
+					<ion-refresher pulling-text="" on-refresh="doRefresh()" class="refreshIcon">
+					</ion-refresher>
+					<div class="item item-divider ">
+							
+						<strong>	Top Songs</strong>
+
+					</div>
+
+
+					<!--- Adding a grid view .....................-->
+					<div class="row" ng-repeat="playlist in playlists" ng-if="$index % 4 === 0">
+			        <div class="col col-25" ng-if="$index < playlists.length">
+			            <img ng-src="{{playlists[$index ].user.picture.large}}" width="100%" alt="artist.large" class="artistImg" alt="Artist#" />
+			            <p>
+							{{playlist.user.name.first}}
+						</p>
+			        </div>
+			        <div class="col col-25" ng-if="$index + 1 < playlists.length">
+			            <img ng-src="{{playlists[$index +1].user.picture.large}}" width="100%" alt="artist.large" class="artistImg" alt="Artist#" />
+			            <p>
+							{{playlist.user.name.first}}
+						</p>
+			        </div>
+			        <div class="col col-25" ng-if="$index + 2 < playlists.length">
+			            <img ng-src="{{playlists[$index +2].user.picture.large}}" width="100%" alt="artist.large" class="artistImg" alt="Artist#" />
+			            <p>
+							{{playlist.user.name.first}}
+						</p>
+        		</div>
+		        <div class="col col-25" ng-if="$index + 3 < playlists.length">
+		            <img ng-src="{{playlists[$index +3].user.picture.large}}" width="100%" alt="artist.large" class="artistImg" alt="Artist#" />
+		            <p>
+						{{playlist.user.name.first}}
+					</p>
+		        </div>
+    </div>
+
+					<!--........................................
+					<div class="list">
+						
+						<ion-list ng-controller="PlaylistCtrl">
+							
+							<ion-item class="card  " ng-repeat="playlist in playlists" ng-click="goPlay()">
+								<img src="{{playlist.user.picture.large}}" alt='large' />
+								<h3>
+									<strong>
+										{{playlist.user.name.first}}
+									</strong>
+								</h3>
+								<h3>
+									City: {{playlist.user.location.city}}
+								</h3>
+								<h3>
+									Phone: {{playlist.user.phone}}
+								</h3>
+								<h3>
+									Email: {{playlist.user.email}}
+								</h3>
+								<i>
+									<span class="badge badge-assertive icon-badge">
+										{{playlist.user.version}}
+									</span>
+								</i>
+							</ion-item>
+						</ion-list>-->
+						
+						<div >
+							<div class="item item-divider">
+							<strong>Featured List. </strong>
+						</div>
+						</div>
+						
+					</div>
+				</ion-content>
+			</ion-tab>
+			<ion-tab title="Categories" icon="ion-social-buffer dark">
+				<br>
+				<h3>
+					Choose a category
+				</h3>
+				<ion-content padding="true" class="has-header homebgd" ng-controller="categoriesCtrl">
+					<ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+					</ion-refresher>
+					<div>
+						<ion-list>
+							<ion-item ng-repeat="category in categories" href="#/app/playlists/{{category.title}}">
+								{{category.title}}
+							</ion-item>
+						</ion-list>
+					</div>
+				</ion-content>
+			</ion-tab>
+		</ion-tabs>
+	</ion-content>
+</ion-view>

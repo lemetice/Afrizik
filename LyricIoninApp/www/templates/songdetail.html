@@ -1,0 +1,48 @@
+<ion-view view-title="Details">
+	<ion-content ng-controller="SongDetailCtrl">
+		<h1>
+			Enjoy this lyric
+		</h1>
+		<div class="list card">
+			<div class="item item-avatar" alt="Avatar" ng-repeat="result in results">
+				<img src="img/musique.png" alt="Artist" />
+				<h3>
+					<strong>
+						{{result.lyric_by | uppercase}}
+					</strong>
+				</h3>
+				<h3>
+					Album: {{result.album_name}}
+				</h3>
+				<h3>
+					Date: {{result.date_release}}
+				</h3>
+			</div>
+			<div >
+				<ion-item>
+					<div class="video-container" ng-bind-html="display_video">
+						
+					</div>
+				</ion-item>
+			</div>
+			<div class="item item-body" ng-bind-html="display_lyric">
+			</div>
+			<div class="item tabs tabs-secondary tabs-icon-left" ng-controller="ShareCtrl" >
+				<!--<a class="tab-item" href="#" onclick="window.open('+"'http://{{result.twitter_official}}'"+', '_system', 'location=yes'); return false;" >
+				<i class="icon ion-social-twitter"></i>
+				Follow 
+				</a>
+				<a class="tab-item" href="#" ng-model="facebook" onclick="window.open('{{facebook}}', '_system', 'location=yes'); return false;">
+				<i class="icon ion-social-facebook"></i>
+				Like 
+				</a>-->
+				<p ng-bing-html="twitter"></p>
+				<p ng-bing-html="facebook"></p>
+				
+				<button class="button button-clear button-positive    ion-android-share" ng-click="shareAnywhere()">
+					Share
+				</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

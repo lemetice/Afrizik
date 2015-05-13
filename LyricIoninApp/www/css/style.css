@@ -1,0 +1,93 @@
+/* Empty. Add your own CSS if you like */
+.slider { height: 100%; text-align: center }
+.scroll { height: 100% }
+
+.custom-icons{
+	color: dark;
+	font-size: 20px;
+}
+.tabs-top > .tabs, .tabs.tabs-top{
+	top:-3px;
+}
+.tabs-striped.tabs-positive .tabs{
+	background-color: #36B1E7;
+}
+
+.detailBtn{
+	background-color: #36B1E7;
+	color:white;
+	border-radius: 5px;
+	height: 30px;
+	border-color: white;
+	border:solid;
+
+}
+h3{
+	display: block;
+	border-radius: 10px;
+	font-style: oblique;
+	text-align: center;
+	margin-top:40px;
+}
+.lyricStyle{
+	color: black;
+}
+
+/*Hendering video responsive*/
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/*Display image and text in same div */
+.imgDiv{
+	position: relative;
+}
+.textDiv {
+	position: absolute;
+
+}
+
+/*Home page style*/
+.homebgd{
+	background-color: black;
+}
+.homeImgbgd{
+	/*background: url(img/x-maleya.jpg);*/
+    background-repeat: no-repeat;
+    /*background-size: contain;*/
+    background-position: center;
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    height: auto;
+   /* margin: auto;
+    
+    position: relative;*/
+}
+.refreshIcon{
+	z-index: 2000;
+	position: fixed;
+	top:10%;
+	left: 4%;
+	color: yellow;
+}
+/*styling the artist pic*/
+.artistImg{
+	border-radius: 5px;
+}
+
+/*Item divider style*/
+.item-divider {
+  color: #FFF;
+  background-color: black; 
+  border-color: black; 
+}

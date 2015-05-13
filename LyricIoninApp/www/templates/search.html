@@ -1,0 +1,37 @@
+<ion-view view-title="Search">
+	
+	<ion-content>
+		<h3>
+			Search result list
+		</h3>
+		<!--<label>Search:</label>
+		<input type="text" ng-model="query" placeholder="search artist" autofocus>-->
+		<div class="list list-inset">
+		  <label class="item item-input">
+		    <i class="icon ion-search placeholder-icon"></i>
+		    <input type="text" placeholder="Search" ng-model="query" autofocus>
+		  </label>
+		</div>
+		<div ng-controller="SearchList">
+			<ion-list item-icon-right>
+				<ion-item class=" card item-thumbnail-left " ng-repeat="result in results | filter : query" href="#/app/songdetail/{{result.id_song}}">
+					<img src="img/musique.png" alt="Artist" class="ion ion-music-note" />
+					<h2>
+						<strong>
+							{{result.lyric_by | uppercase}}
+						</strong>
+					</h2>
+					<h2>
+						Title: {{result.title}}
+					</h2>
+					<h3>
+						category: {{result.name}}
+					</h3>
+					<h4>
+						Date: {{result.date_release}}
+					</h4>
+				</ion-item>
+			</ion-list>
+		</div>
+	</ion-content>
+</ion-view>
