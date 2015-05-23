@@ -50,7 +50,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter
       }
       //Adding Google Admod for advertisement.
       if(window.plugins && window.plugins.AdMob) {
-                var admob_key = device.platform == "Android" ? "ANDROID_PUBLISHER_KEY" : "IOS_PUBLISHER_KEY";
+                var admob_key = device.platform == "Android" ? "ca-app-pub-6869992474017983/4806197152" : "ca-app-pub-6869992474017983/9375997553";
                 var admob = window.plugins.AdMob;
                 admob.createBannerView( 
                     {
