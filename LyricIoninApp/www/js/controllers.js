@@ -76,7 +76,7 @@ angular.module('starter.controllers', ['ngSanitize'])
   // initialize client with app credentials
       SC.initialize({
         client_id: '3ecb6517e53fa8882759e1c0d4fadca8',
-        redirect_uri: 'http://www.soundcloud.com'
+        redirect_uri: 'https://soundcloud.com/connect'
       });
 
       // initiate auth popup

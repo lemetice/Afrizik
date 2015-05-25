@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Artist_Song form</title>
+</head>
+<body>
+
+		<form ng-submit="addSong()">
+			<div class="list">
+				<label class="item item-input">
+					<span class="input-label">
+						Artistname
+					</span>
+					<input type="text" ng-model="artist.name">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">
+						Facebook
+					</span>
+					<input type="text" ng-model="artist.facebook_official">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">
+						Twitter
+					</span>
+					<input type="text" ng-model="artist.twitter_official">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">
+						Youtube
+					</span>
+					<input type="text" ng-model="artist.youtube_official">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">
+						Artist thumbnail
+					</span>
+					<input type="file" ng-model="artist.thumbnail">
+				</label>
+
+				<!--
+				<label class="item item-input">
+					<span class="input-label">
+						Lyric text
+					</span>
+					<input type="text" ng-model="lyric.text">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">
+						Date add
+					</span>
+					<input type="date" ng-model="lyric.date_add">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">
+						Album title
+					</span>
+					<input type="text" ng-model="song.title">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">
+						Album title
+					</span>
+					<input type="text" ng-model="song.album_name">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">
+						Date released
+					</span>
+					<input type="date" ng-model="song.date_released">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">
+						Song date add
+					</span>
+					<input type="date" ng-model="song.date_add">
+				</label>
+				-->
+				<label class="item item-input">
+					<button class="button button-block button-energized" type="submit">
+						Not available
+					</button>
+				</label>
+			</div>
+		</form>
+
+</body>
+</html>
