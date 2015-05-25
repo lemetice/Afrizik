@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="afrizik">
 <head>
 	<title>Artist_Song form</title>
+	<link rel="stylesheet" type="text/css" href="../LyricIoninApp/www/lib/ionic/css/ionic.min.css">
+	<script type="text/javascript" src="../LyricIoninApp/www/lib/ionic/js/angular/angular.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
+	<script src="artist_song_form.js"></script>
+
 </head>
 <body>
-
+		<div ng-controller="ArtistSongCtrl">
 		<form ng-submit="addSong()">
 			<div class="list">
 				<label class="item item-input">
@@ -77,8 +82,8 @@
 				</label>
 				-->
 				<label class="item item-input">
-					<button class="button button-block button-energized" type="submit">
-						Not available
+					<button class="button button-block button-positive" type="submit">
+						submit
 					</button>
 				</label>
 			</div>
