@@ -8,7 +8,8 @@ angular.module('afrizik', [])
 	$scope.artist = {};
 
 	$scope.addSong = function(){
-		console.log($scope.artist);
+
+		alert($scope.artist);
 		var newArtist= $scope.artist;
 
 		var artistRef = a_fb.child("artists");

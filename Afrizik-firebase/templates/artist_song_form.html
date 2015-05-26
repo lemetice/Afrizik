@@ -2,43 +2,43 @@
 <html ng-app="afrizik">
 <head>
 	<title>Artist_Song form</title>
-	<link rel="stylesheet" type="text/css" href="../LyricIoninApp/www/lib/ionic/css/ionic.min.css">
-	<script type="text/javascript" src="../LyricIoninApp/www/lib/ionic/js/angular/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/ionic.min.css">
+	<script type="text/javascript" src="../js/angular.min.js"></script>
 	<script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
-	<script src="artist_song_form.js"></script>
+	<script src="../js/artist_song_form.js" type="text/javascript"></script>
 
 </head>
 <body>
-		<div ng-controller="ArtistSongCtrl">
+		<div class= "card" g-controller="ArtistSongCtrl">
 		<form ng-submit="addSong()">
 			<div class="list">
 				<label class="item item-input">
 					<span class="input-label">
-						Artistname
+						Artist name :
 					</span>
 					<input type="text" ng-model="artist.name">
 				</label>
 				<label class="item item-input">
 					<span class="input-label">
-						Facebook
+						Facebook :
 					</span>
 					<input type="text" ng-model="artist.facebook_official">
 				</label>
 				<label class="item item-input">
 					<span class="input-label">
-						Twitter
+						Twitter :
 					</span>
 					<input type="text" ng-model="artist.twitter_official">
 				</label>
 				<label class="item item-input">
 					<span class="input-label">
-						Youtube
+						Youtube :
 					</span>
 					<input type="text" ng-model="artist.youtube_official">
 				</label>
 				<label class="item item-input">
 					<span class="input-label">
-						Artist thumbnail
+						Artist thumbnail :
 					</span>
 					<input type="file" ng-model="artist.thumbnail">
 				</label>
