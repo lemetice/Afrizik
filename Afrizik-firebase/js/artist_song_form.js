@@ -1,5 +1,6 @@
 /**/
 
+
 var a_fb = new Firebase('https://afrizik.firebaseio.com/afrizik');
 
 angular.module('afrizik', [])
@@ -9,7 +10,7 @@ angular.module('afrizik', [])
 
 	$scope.addSong = function(){
 
-		alert($scope.artist);
+		cosole.log($scope.artist);
 		var newArtist= $scope.artist;
 
 		var artistRef = a_fb.child("artists");
