@@ -47,8 +47,9 @@ angular.module('starter.controllers', ['ngSanitize'])
   $scope.playlists=[];
 //Loading data
  //$ionicLoading.show();
- 
-  PersonService.GetFeed().then(function(items){
+ $scope.playlists = PersonService.GetFeed() ;
+  console.log ($scope.playlists);
+  /*PersonService.GetFeed().then(function(items){
     $scope.playlists = items;
   });
 
@@ -58,7 +59,7 @@ angular.module('starter.controllers', ['ngSanitize'])
     //Stop the ion-refresher from spinning
     $scope.$broadcast('scroll.refreshComplete');
   });
-};
+};*/
  
 
 })
@@ -87,6 +88,12 @@ angular.module('starter.controllers', ['ngSanitize'])
         });
       });
     }
+// Fetching makossa tracks
+    SC.get('/tracks', {genres: 'rnb'}, function(tracks){
+      $scope.song_tracks = tracks;
+      console.log($scope.song_tracks);
+    })
+
 })
 
 

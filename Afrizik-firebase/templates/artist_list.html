@@ -1,6 +1,26 @@
+<!--<!doctype html>
+<html ng-app="user">
 
-<!-- Here goes the DOM manipulation  with form filling-->
+<head> Here goes the DOM manipulation  with form filling
+<link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/docs.css">
+    <link type="text/css" rel="stylesheet" href="../css/font-awesome.css">
+    
+	<style type="text/css">
+		.dropdown-menu .btn.btn-default.btn-sm.btn-block { width: 100%;}
+		.dropdown-menu .btn.btn-default.btn-sm { background-color: #fff; background-image: none; }
+	</style>
 
+	<script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="../js/angular-resource.min.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+	<script src="../js/firebase.js"></script>
+    <script src="../js/angularfire.min.js"></script>
+    <script src="../js/artist.js"></script>
+</head>
+<body>
 <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
 <section>
 	<input type="text" ng-model="search" class="search-query pull-left" placeholder="Search">
@@ -39,7 +59,7 @@
 		<h3>User Form</h3>
 	</div>
 	<div class="modal-body">
-		<!--<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>-->
+		<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
 		<form name="userForm" class="form-horizontal">
 			<div class="control-group">
 				<label class="control-label" for="name">Name</label>
@@ -115,4 +135,8 @@
 		<button ng-click="add()" type="submit" ng-if="!user.id" ng-disabled="user.$invalid || !user.tnc" class="btn btn-primary"><i class="icon-white icon-plus"></i> Add</button>
 		<button ng-click="cancel()" class="btn">Cancel</button>
 	</div>
-</script>
+</script>-->
+
+<!--</body>
+</html> 
+-->

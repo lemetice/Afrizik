@@ -6,7 +6,8 @@
 				
 
 				<ion-content padding="true" class="has-header homebgd">
-					<br><div class="card "> 
+					<br>
+					<div class="card "> 
 						<img ng-src="img/x-maleya.jpg"  alt="Artist#" width="100%" height="100%" class="homeImgbgd" />
 						
 					</div>
@@ -21,32 +22,32 @@
 
 
 					<!--- Adding a grid view .....................-->
-					<div class="row" ng-repeat="playlist in playlists" ng-if="$index % 4 === 0">
+				<div class="row" ng-repeat="playlist in playlists" ng-if="$index % 4 === 0">
 			        <div class="col col-25" ng-if="$index < playlists.length">
-			            <img ng-src="{{playlists[$index ].user.picture.large}}" width="100%" alt="artist.large" class="artistImg" alt="Artist#" />
+			            <img ng-src="{{playlists[$index ].user.picture.large}}" width="100%"  class="artistImg" alt="Artist#" />
 			            <p>
 							{{playlist.user.name.first}}
 						</p>
 			        </div>
 			        <div class="col col-25" ng-if="$index + 1 < playlists.length">
-			            <img ng-src="{{playlists[$index +1].user.picture.large}}" width="100%" alt="artist.large" class="artistImg" alt="Artist#" />
+			            <img ng-src="{{playlists[$index +1].user.picture.large}}" width="100%"  class="artistImg" alt="Artist#" />
 			            <p>
 							{{playlist.user.name.first}}
 						</p>
 			        </div>
 			        <div class="col col-25" ng-if="$index + 2 < playlists.length">
-			            <img ng-src="{{playlists[$index +2].user.picture.large}}" width="100%" alt="artist.large" class="artistImg" alt="Artist#" />
+			            <img ng-src="{{playlists[$index +2].user.picture.large}}" width="100%"  class="artistImg" alt="Artist#" />
 			            <p>
 							{{playlist.user.name.first}}
 						</p>
-        		</div>
-		        <div class="col col-25" ng-if="$index + 3 < playlists.length">
-		            <img ng-src="{{playlists[$index +3].user.picture.large}}" width="100%" alt="artist.large" class="artistImg" alt="Artist#" />
+        			</div>
+		        	<div class="col col-25" ng-if="$index + 3 < playlists.length">
+		            <img ng-src="{{playlists[$index +3].user.picture.large}}" width="100%"  class="artistImg" alt="Artist#" />
 		            <p>
 						{{playlist.user.name.first}}
 					</p>
-		        </div>
-    </div>
+		        	</div>
+    			</div>
 
 					<!--........................................
 					<div class="list">
@@ -77,14 +78,34 @@
 							</ion-item>
 						</ion-list>-->
 						
-						<div >
+						<div ng-controller= "SoundCloudCtrl">
 							<div class="item item-divider">
-							<strong>Featured List. </strong>
-						</div>
+								<strong>Featured List. </strong>
+							</div>
+								<!--- Adding a grid view .....................-->
+							<div class="row" ng-repeat="track in  song_tracks" ng-if="$index % 4 === 0">
+						        <div class="col col-25" ng-if="$index <  song_tracks.length">
+						            <img ng-src="{{ song_tracks[$index ].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+						            
+						        </div>
+						        <div class="col col-25" ng-if="$index + 1 <  song_tracks.length">
+						            <img ng-src="{{ song_tracks[$index +1].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+						            <p> {{track.user.city}}</p>
+						        </div>
+						        <div class="col col-25" ng-if="$index + 2 <  song_tracks.length">
+						            <img ng-src="{{ song_tracks[$index +2].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+						            
+			        			</div>
+					        	<div class="col col-25" ng-if="$index + 3 <  song_tracks.length">
+					            	<img ng-src="{{ song_tracks[$index +3].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+					            
+					        	</div>
+			    			</div>
+
 						</div>
 						
-					</div>
-				</ion-content>
+					
+			</ion-content>
 			</ion-tab>
 			<ion-tab title="Categories" icon="ion-social-buffer dark">
 				<br>

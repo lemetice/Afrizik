@@ -19,6 +19,8 @@ angular.module('user', ['ngRoute', 'firebase', 'ui.bootstrap'])
     return $firebase(new Firebase(fbURL + state_table));
 })
 
+
+/*
 .config(function($routeProvider) {
     $routeProvider
         .when('/', {
@@ -28,7 +30,7 @@ angular.module('user', ['ngRoute', 'firebase', 'ui.bootstrap'])
         .otherwise({
             redirectTo: '/'
         });
-})
+})*/
 
 .controller('ListCtrl', function($scope, $modal, $location, Users, Country, State, $firebase, fbURL, $routeParams, user_table, filterFilter) {
     // Define valriables
@@ -54,6 +56,7 @@ angular.module('user', ['ngRoute', 'firebase', 'ui.bootstrap'])
 
     // Modal: called by edit(userId) and Add new user
     $scope.open = function(userId) {
+    	alert("open modal");
         var modalInstance = $modal.open({
             templateUrl: 'add_user_modal',
             controller: $scope.model,
