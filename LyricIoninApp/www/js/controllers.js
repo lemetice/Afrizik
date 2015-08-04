@@ -43,35 +43,72 @@ angular.module('starter.controllers', ['ngSanitize'])
 })
 
 
-.controller('PlaylistsCtrl', function($scope, $timeout, $ionicLoading,  PersonService) {
-  $scope.playlists=[];
+.controller('PlaylistsCtrl', function($scope, $timeout, $ionicLoading, $sce, PersonService, ArtistService) {
+  $scope.playlists = [];
+  //$ionicLoading.show();
+  //$scope.albums = [];
+  var all_obj = ArtistService.all();
+  all_obj
+    .$loaded().then(function(data){
+      //collect the artists record $scope.playlists = data.artists;
+      
+      //collecct the albums recorsd $scope.albums = data.albums;
+      //Collect the playlist from firebase
+      $scope.playlists=data;
+      //console.log($scope.playlists=data);
+      //alert("output display" + $scope.playlists[0]);
+      $ionicLoading.hide();
+      })
+    .catch(function(error) {
+      console.error("Error:", error);
+      alert("Error:", error +'\n'+'You are not connected!');
+
+      
+  });
+
+ /* $scope.playlists=[];
 //Loading data
- //$ionicLoading.show();
- $scope.playlists = PersonService.GetFeed() ;
-  console.log ($scope.playlists);
-  /*PersonService.GetFeed().then(function(items){
+ 
+ 
+  PersonService.GetFeed().then(function(items){
     $scope.playlists = items;
   });
 
   $scope.doRefresh = function() {
   PersonService.GetNewUser().then(function(items){
-    $scope.playlists = items.concat($scope.items);
-    //Stop the ion-refresher from spinning
-    $scope.$broadcast('scroll.refreshComplete');
+    $scope.playlists = items.concat($scope.items);    $scope.$broadcast('scroll.refreshComplete');
   });
 };*/
  
 
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams, $http,$state, $ionicLoading) {
-        $scope.goPlay= function(){
-          $state.go('app.single');
-        }
+.controller('PlaylistCtrl', function($scope, $stateParams, $http, $state, $ionicLoading, $sce, ArtistService) {
+        $scope.playlist = {};
+        song_obj = ArtistService.oneSong();
+        song_obj.
+        $loaded().then(function(data){
 
+        $scope.playlist = data;
+        /*embedded html*/
+       $scope.display_lyric = $sce.trustAsHtml($scope.playlist.lyrics ); 
+
+       $scope.display_video = $sce.trustAsHtml('<iframe src="'+ $scope.playlist.song_link
+        + '" frameborder="0" width="560" height="315"></iframe>');
+     }).
+        catch(function(error){
+          console.log ("Error: " +error );
+        })
 })
 /**/
 .controller('SoundCloudCtrl', function($scope, $state){
+
+    // Fetching makossa tracks {q: 'Germany', limit:20, linked_partitioning: 1}
+    SC.get('/tracks', {genres:'rap'}, function(tracks){
+      $scope.song_tracks = tracks;
+      console.log($scope.song_tracks);
+    })
+    
 
   $scope.soundCloudLogin = function(){
   // initialize client with app credentials
@@ -88,14 +125,21 @@ angular.module('starter.controllers', ['ngSanitize'])
         });
       });
     }
-// Fetching makossa tracks
-    SC.get('/tracks', {genres: 'rnb'}, function(tracks){
-      $scope.song_tracks = tracks;
-      console.log($scope.song_tracks);
-    })
-
 })
 
+.controller('SoundTrackCtrl', function($scope, $stateParams, $state){
+    $scope.playTrack = function(){
+      var sound = SC.stream("/tracks/293", function(sound){
+          sound.play();
+      });
+    }/*
+    $scope.playTrack = function(){
+      SC.get('/tracks', {genres:'rap'}, function(tracks){
+      console.log(tracks);
+      SC.stream(tracks + "/" + $stateParams, {autoPlay: true});
+    });
+  }*/
+})
 
 .controller("categoriesCtrl", function($scope, $stateParams){
   $scope.categories = [
@@ -331,10 +375,30 @@ $scope.searchPopup = function() {
     }
 })
  /*##########################################
-  |        loading   ionic                  |
+  |        Constants                        |
   *-########################################*/
+.constant('FBURL', "https://afrizik.firebaseio.com/")
 .constant('$ionicLoadingConfig', {
   template: '<h3><icon  android="ion-loading-c" default="ion-refreshing"></icon></h3>Loading...'
+})
+
+/*Carousel controller*/
+.controller('CarouselCtrl', function ($scope) {
+  $scope.myInterval = 3000;
+  $scope.slides = [
+    {
+      image: 'http://lorempixel.com/400/200/'
+    },
+    {
+      image: 'http://lorempixel.com/400/200/food'
+    },
+    {
+      image: 'http://lorempixel.com/400/200/sports'
+    },
+    {
+      image: 'http://lorempixel.com/400/200/people'
+    }
+  ];
 })
 
 ;

@@ -1,26 +1,32 @@
-<ion-view view-title="Details">
-	<ion-content ng-controller="SongDetailCtrl">
-		<h1>
-			Enjoy this lyric
-		</h1>
+<ion-view view-title="Play song">
+
+	<ion-nav-buttons side="right" >
+        <button class="icon  ion-android-more-vertical dark" ng-click="alert('Waooh')"></button>
+    </ion-nav-buttons>
+
+	<ion-content class="padding">
+		<h5>
+			Enjoy this song &lyrics
+		</h5>
 		<div class="list card">
-			<div class="item item-avatar" alt="Avatar" ng-repeat="result in results">
-				<img ng-src="img/musique.png" alt="Artist" />
+			<div class="item item-avatar" alt="Avatar" >
+				<img data-ng-src="data:image/png;base64,{{playlist.thumbnail.base64}}" data-err-src="images/png/avatar.png" class="homeImgbgd" />
 				<h3>
 					<strong>
-						{{result.lyric_by | uppercase}}
+						{{playist.name | uppercase}}
 					</strong>
 				</h3>
 				<h3>
-					Album: {{result.album_name}}
+					Album: {{playlist.category}}
 				</h3>
 				<h3>
-					Date: {{result.date_release}}
+					Date: {{playlist.date}}
 				</h3>
+				<span class="icon ion-android-more-vertical dark"></span>
 			</div>
 			<div >
 				<ion-item>
-					<div class="video-container" ng-bind-html="display_video">
+					<div class="video-container iframe_loader" ng-bind-html="display_video">
 						
 					</div>
 				</ion-item>
@@ -31,11 +37,11 @@
 				<!--<a class="tab-item" href="#" onclick="window.open('+"'http://{{result.twitter_official}}'"+', '_system', 'location=yes'); return false;" >
 				<i class="icon ion-social-twitter"></i>
 				Follow 
-				</a>
-				<a class="tab-item" href="#" ng-model="facebook" onclick="window.open('{{facebook}}', '_system', 'location=yes'); return false;">
+				</a>-->
+				<a class="tab-item" href="#" ng-model="facebook" onclick="window.open('http://www.w3schools.com', '_system', 'location=yes'); return false;">
 				<i class="icon ion-social-facebook"></i>
 				Like 
-				</a>-->
+				</a>
 				<p ng-bing-html="twitter"></p>
 				<p ng-bing-html="facebook"></p>
 				

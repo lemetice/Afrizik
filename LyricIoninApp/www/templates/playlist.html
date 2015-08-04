@@ -1,34 +1,22 @@
-<ion-view view-title="Playlist">
+<ion-view view-title="Playlist Streaming">
 	<ion-content>
 		<h3>
-			List of artists/songs
+			Stream songs
 		</h3>
 		<div class="card">
 			<div class="item item-text-wrap">
 				<p>
-					Display :{{playlist.Country}}
+					<img data-ng-src="data:image/png;base64,{{artist.thumbnail.base64}}" data-err-src="images/png/avatar.png"/><img ng-src="playlist.thum">
+				</p>
+				<p>
+					<button class="icon ion-prev" ng-click="prevTrack()"></button>
+					<button class="icon ion-stop" ng-click="playTrack()"></button>
+					<button class="icon ion-next" ng-click="nextTrack()"></button>
 				</p>
 			</div>
 		</div>
-		<!--<div ng-controller="SongsCtrl">
-		<ion-list item-icon-right >
-		<ion-item class=" card item-thumbnail-left " ng-repeat="result in results" href="#/app/songdetail/{{result.id_song}}">
-		<img src="img/avatar.png" alt="Artist" />
-		<h2>
-		<strong>
-		{{result.lyric_by | uppercase}}
-		</strong>
-		</h2>
-		<h2>
-		Title: {{result.title}}
-		</h2>
-		<h3>
-		category: {{result.name}}
-		</h3>
-		<h4>Date: {{result.date_release}}</h4>
-		<i><span class="badge badge-assertive icon-badge">{{result.id_song}}</span></i>
-		</ion-item>
-		</ion-list>
-		</div>-->
+
+
+		
 	</ion-content>
 </ion-view>

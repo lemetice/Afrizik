@@ -1,11 +1,19 @@
 /* Empty. Add your own CSS if you like */
+/*Customised icon color and size*/
+.custom-icon {
+  font-size: 28px;
+  color : #FFC900;
+}
+/*Header bar app title*/
+.bar.bar-energized .title {
+  color: #050505;
+  font-size: 32px;
+}
+
 .slider { height: 100%; text-align: center }
 .scroll { height: 100% }
 
-.custom-icons{
-	color: dark;
-	font-size: 20px;
-}
+
 .tabs-top > .tabs, .tabs.tabs-top{
 	top:-3px;
 }
@@ -56,10 +64,33 @@ h3{
 
 }
 
-/*Home page style*/
+/*Home and menu page style*/
 .homebgd{
-	background-color: white;
+	background-color: #212121;
 }
+/*Menu item list backgroud
+.item {
+  border-color: #212121;
+  background-color: #212121;
+  color: #FFF;
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: -1px;
+  padding: 16px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 16px;
+}*/
+/*Categories item list black
+.item-complex .item-content, .item-radio .item-content {
+  position: relative;
+  z-index: 2;
+  padding: 16px 49px 16px 16px;
+  border: none;
+  background-color: #212121;
+}*/
+
 .homeImgbgd{
 	/*background: url(img/x-maleya.jpg);*/
     background-repeat: no-repeat;
@@ -90,4 +121,23 @@ h3{
   color: #FFF;
   background-color: black; 
   border-color: black; 
+}
+
+/*Artist profile*/
+.artist_profile{
+  background: url('../img/material-graphite.jpg') no-repeat center center fixed;
+  background-size: 100%;
+  position: relative;
+
+}
+
+/*Show laoder during iframe content loading*/
+.iframe_loader{
+  background:url(../img/loader.gif) center center no-repeat;
+ }
+ /*list item background*/
+ .item-complex .item-content, .item{
+    background-color: #212121;
+    color: #FFF;
+    border-color: #212121;
 }

@@ -1,4 +1,4 @@
-<ion-view view-title="Enjoy Local Music">
+<ion-view view-title="AFRIZIK">
 	
 	<ion-content ng-controller="PlaylistCtrl" >
 		<ion-tabs class="tabs-energized tabs-striped tabs-top tabs-icon-top">
@@ -17,11 +17,11 @@
 					<div class="item item-divider ">
 							
 						<strong>Top Songs</strong>
-
+						
 					</div>
 
 
-					<!--- Adding a grid view .....................-->
+					<!--- Adding a grid view .....................
 				<div class="row" ng-repeat="playlist in playlists" ng-if="$index % 4 === 0">
 			        <div class="col col-25" ng-if="$index < playlists.length">
 			            <img ng-src="{{playlists[$index ].user.picture.large}}" width="100%"  class="artistImg" alt="Artist#" />
@@ -47,62 +47,55 @@
 						{{playlist.user.name.first}}
 					</p>
 		        	</div>
-    			</div>
-
-					<!--........................................
-					<div class="list">
-						
-						<ion-list ng-controller="PlaylistCtrl">
-							
-							<ion-item class="card  " ng-repeat="playlist in playlists" ng-click="goPlay()">
-								<img src="{{playlist.user.picture.large}}" alt='large' />
-								<h3>
-									<strong>
-										{{playlist.user.name.first}}
-									</strong>
-								</h3>
-								<h3>
-									City: {{playlist.user.location.city}}
-								</h3>
-								<h3>
-									Phone: {{playlist.user.phone}}
-								</h3>
-								<h3>
-									Email: {{playlist.user.email}}
-								</h3>
-								<i>
-									<span class="badge badge-assertive icon-badge">
-										{{playlist.user.version}}
-									</span>
-								</i>
-							</ion-item>
-						</ion-list>-->
-						
-						<div ng-controller= "SoundCloudCtrl">
-							<div class="item item-divider">
-								<strong>Featured List. </strong>
-							</div>
-								<!--- Adding a grid view .....................-->
-							<div class="row" ng-repeat="track in  song_tracks" ng-if="$index % 4 === 0">
-						        <div class="col col-25" ng-if="$index <  song_tracks.length">
-						            <img ng-src="{{ song_tracks[$index ].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
-						            
-						        </div>
-						        <div class="col col-25" ng-if="$index + 1 <  song_tracks.length">
-						            <img ng-src="{{ song_tracks[$index +1].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
-						            <p> {{track.user.city}}</p>
-						        </div>
-						        <div class="col col-25" ng-if="$index + 2 <  song_tracks.length">
-						            <img ng-src="{{ song_tracks[$index +2].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
-						            
-			        			</div>
-					        	<div class="col col-25" ng-if="$index + 3 <  song_tracks.length">
-					            	<img ng-src="{{ song_tracks[$index +3].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
-					            
-					        	</div>
-			    			</div>
-
+				</div>-->
+				<div ng-controller="PlaylistsCtrl">
+					<div class="row" ng-repeat="artist in playlists" ng-if="$index % 1 === 0">
+						<!--<div class="col col-50" ng-if="$index < playlists.length" >
+							<a href="#">
+							<img data-ng-src="data:image/png;base64,{{playlists[$index].thumbnail.base64}}" data-err-src="images/png/avatar.png" class="homeImgbgd" />
+							</a>
+							<span> {{ playlists[$index].name }}</span>
 						</div>
+						<div class="col col-50" >
+							<a href="#">
+							<img data-ng-src="data:image/png;base64,{{artist.thumbnail.base64}}" data-err-src="images/png/avatar.png" class="homeImgbgd" />
+							</a>
+							<span class="stable"> {{ playlists[$index].name }}</span>
+						</div>-->
+						<div class="col col-50" >
+							<a href="#/app/rsongdetail/{{artist.JutVPh7yQENfY6Vm3Y6}}">
+							<img data-ng-src="data:image/png;base64,{{artist.thumbnail.base64}}" data-err-src="images/png/avatar.png" class="homeImgbgd" />
+							</a>
+							<span class="stable"> {{ artist.name }}</span>
+						</div>
+					</div>
+				</div>
+
+				<div ng-controller= "SoundCloudCtrl">
+					<div class="item item-divider">
+						<strong>Featured List. </strong>
+					</div>
+						<!--- Adding a grid view .....................-->
+					<div class="row" ng-repeat="track in  song_tracks" ng-if="$index % 4 === 0">
+				        <div class="col col-25" ng-if="$index <  song_tracks.length">
+				            <img ng-src="{{ song_tracks[$index ].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+				            
+				        </div>
+				        <div class="col col-25" ng-if="$index + 1 <  song_tracks.length">
+				            <img ng-src="{{ song_tracks[$index +1].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+				            <p> {{track.user.city}}</p>
+				        </div>
+				        <div class="col col-25" ng-if="$index + 2 <  song_tracks.length">
+				            <img ng-src="{{ song_tracks[$index +2].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+				            
+	        			</div>
+			        	<div class="col col-25" ng-if="$index + 3 <  song_tracks.length">
+			            	<img ng-src="{{ song_tracks[$index +3].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+			            
+			        	</div>
+	    			</div>
+
+				</div>
 						
 					
 			</ion-content>
@@ -116,9 +109,10 @@
 					<ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
 					</ion-refresher>
 					<div>
-						<ion-list>
-							<ion-item ng-repeat="category in categories" href="#/app/playlists/{{category.title}}">
+						<ion-list >
+							<ion-item ng-repeat="category in categories" href="#/app/playlists/{{category.title}}" class="item-icon-right">
 								{{category.title}}
+        						<i class="icon ion-chevron-right icon-accessory"></i>
 							</ion-item>
 						</ion-list>
 					</div>

@@ -1,13 +1,36 @@
 <ion-view view-title="SoundCloud">
-	<!--<ion-nav-buttons side="right" >
-        <button class="right button button-icon icon ion-plus" ng-click="create()"></button>
-        <button class="right button button-icon icon ion-camera" ng-click="upload()"></button>
-    </ion-nav-buttons>-->
+	<!---->
+	<ion-nav-buttons side="right" >
+        <button class="right button button-icon icon ion-person dark" ng-click="userProfile()"></button>
+    </ion-nav-buttons>
 	<ion-content>
-
-		<h3>
-			Join SoundCloud.
-		</h3>
+		<div class="item item-divider">
+			<strong>Local Artists</strong>
+		</div>
+			<!--- Adding a grid view .....................-->
+		<div class="row" ng-repeat="track in  song_tracks" ng-if="$index % 4 === 0">
+	        <div class="col col-25" ng-if="$index <  song_tracks.length">
+	            <a href="#/app/soundcloud/{{song_tracks[$index].id}}">
+	            	<img ng-src="{{ song_tracks[$index ].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+	            </a>
+	        </div>
+	        <div class="col col-25" ng-if="$index + 1 <  song_tracks.length">
+	        	<a href="#/app/soundcloud/{{song_tracks[$index].id}}">
+	           		<img ng-src="{{ song_tracks[$index +1].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+	           	</a>
+				<span class="stable"> {{ song_tracks[$index +1].user.name }}</span>
+	        </div>
+	        <div class="col col-25" ng-if="$index + 2 <  song_tracks.length">
+	        	<a href="#/app/soundcloud/{{song_tracks[$index].id}}">
+	            	<img ng-src="{{ song_tracks[$index +2].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+	            </a>
+			</div>
+        	<div class="col col-25" ng-if="$index + 3 <  song_tracks.length">
+        		<a href="#/app/soundcloud/{{song_tracks[$index].id}}">
+            		<img ng-src="{{ song_tracks[$index +3].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
+            	</a>
+        	</div>
+		</div>
 		<div class="card">
 			<div class="item item-text-wrap">
 				<p>
@@ -20,6 +43,7 @@
 				</p>
 			</div>
 		</div>
+
 		
 	</ion-content>
 </ion-view>

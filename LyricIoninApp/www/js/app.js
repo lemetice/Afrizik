@@ -7,7 +7,7 @@
 
 
 var db=null;
-angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter.services', 'ngSanitize'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter.services', 'ngSanitize', 'ui.bootstrap', 'firebase'])
 
 
 .run(function($ionicPlatform, $rootScope, $cordovaNetwork, $ionicPopup, $ionicLoading, $cordovaSQLite) {
@@ -137,16 +137,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter
       }
     })
     
- /* .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
-      }
-    }
-  })
-*/
   .state('app.songsincategory', {
     url: "/playlists/:categoryId",
     views: {
@@ -167,16 +157,36 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter
         }
       }
     })
-    
+   /* navingation a particular track page to play track*/
+   .state('app.soundtrack', {
+    url: "/soundcloud/:trackId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/soundtracks.html",
+        controller: 'SoundCloudCtrl'
+      }
+    }
+  })
+  
 
   .state('app.about', {
     url: "/about",
     views: {
       'menuContent': {
-        templateUrl: "templates/about.html"        
+        templateUrl: "templates/profile.html"        
       }
     }
   })
+  .state('app.rsongdetail', {
+    url: "/rsongdetail/:songId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/rsongdetail.html",
+        controller: "PlaylistCtrl"
+      }
+    }
+  })
+
   ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
