@@ -105,17 +105,26 @@ angular.module('starter.controllers', ['ngSanitize'])
                 $scope.display_video = $sce.trustAsHtml('<iframe src="' + $scope.playlist.song_link
                         + '" frameborder="0" width="560" height="315"></iframe>');
 
-                /*$scope.dispaly_facebook = $scope.playlist.twitter;
-                $scope.dispaly_twitter = <span class="custom-span custom-icon"\
-                  onclick="window.open(\
-                    '{{$scope.playlist_twitter}}'\
-                    , '_system'\
-                    , 'location=yes'\
-                    ); return false;" \
-                    ><i class=\
-                    "icon ion-social-twitter"\
-                    ></i> </span>
-                    */
+                $scope.display_facebook =  $sce.trustAsHtml('<span class="custom-span custom-icon" '+ 
+                    'onclick="window.open(' +
+                    "'" + $scope.playlist.facebook + "'" +
+                    ', \'_system\' '+
+                    ', \'location=yes\'' +
+                    '); return false;" ' +
+                    '><i class=' +
+                    '"icon ion-social-facebook" '+
+                    '></i> </span>'
+                    );            
+                $scope.display_twitter = $sce.trustAsHtml('<span class="custom-span custom-icon" '+ 
+                    'onclick="window.open(' +
+                    "'" + $scope.playlist.twitter + "'" +
+                    ', \'_system\' '+
+                    ', \'location=yes\'' +
+                    '); return false;" ' +
+                    '><i class=' +
+                    '"icon ion-social-twitter" '+
+                    '></i> </span>'
+                    );
                 }).
             catch (function (error) {
                  console.log("Error: " + error);

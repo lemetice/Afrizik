@@ -13,19 +13,13 @@
 				<h2>
 					{{playlist.name}}
 				</h2>
-				<p class="row">
-				<span  class="custom-span custom-icon" ng-href="#" ng-click="GotoLink('{{playlist.facebook}}')">
-				<i class="icon ion-social-facebook"></i>
-				
-				</span>
-				&nbsp &nbsp &nbsp
-				<span class="custom-span custom-icon"  onclick="window.open('{{display_twitter}}', '_system', 'location=yes'); return false;" >
-				<i class="icon ion-social-twitter"></i> 
-				</span>
-				&nbsp &nbsp &nbsp
-    			<span class="custom-icon icon ion-more custom-span" ng-click="showActionsheet()">   </span>
-    			<div ng-bind-html= "display_twitter">poop</div>
-				</p><!--
+				<div class="row">
+					<div class="col col-33" ng-bind-html= "display_facebook" ></div>
+	    			<div class="col col-33" ng-bind-html= "display_twitter"></div>
+					<div class="col col-33">
+	    				<span class="custom-icon icon ion-more custom-span" ng-click="showActionsheet()"></span>
+	    			</div>
+				</div><!--
 				<span class="badge bagde-assertive icon ion-android-more-vertical" >more</span>-->
 			</div>
 			<div >
