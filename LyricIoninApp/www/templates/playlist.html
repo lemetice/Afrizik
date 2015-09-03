@@ -1,5 +1,62 @@
-<ion-view view-title="Playlist Streaming">
-	<ion-content>
+<ion-view view-title="">
+	<ion-nav-buttons side="right" >
+        <button class="button button-dark button-clear icon ion-more" ng-click="popover.show($event)"></button>
+    </ion-nav-buttons>
+
+	<ion-content class="padding">
+		<h5>
+			
+		</h5>
+		<div class="list card ">
+			<div class="item item-avatar" alt="Avatar" >
+				<img data-ng-src="data:image/png;base64,{{playlist.thumbnail.base64}}" data-err-src="images/png/avatar.png" class="homeImgbgd" />
+				<h2>
+					{{playlist.name}}
+				</h2>
+				<p class="row">
+				<span  class="custom-span custom-icon" ng-href="#" ng-click="GotoLink('{{playlist.facebook}}')">
+				<i class="icon ion-social-facebook"></i>
+				
+				</span>
+				&nbsp &nbsp &nbsp
+				<span class="custom-span custom-icon"  onclick="window.open('{{display_twitter}}', '_system', 'location=yes'); return false;" >
+				<i class="icon ion-social-twitter"></i> 
+				</span>
+				&nbsp &nbsp &nbsp
+    			<span class="custom-icon icon ion-more custom-span" ng-click="showActionsheet()">   </span>
+    			<div ng-bind-html= "display_twitter">poop</div>
+				</p><!--
+				<span class="badge bagde-assertive icon ion-android-more-vertical" >more</span>-->
+			</div>
+			<div >
+				<ion-item>
+					<div class="video-container iframe_loader" ng-bind-html="display_video">
+						
+					</div>
+				</ion-item>
+			</div>
+			<div class="item item-body" ng-bind-html="display_lyric">
+			</div>
+			<div class="item tabs tabs-secondary tabs-icon-left" ng-controller="ShareCtrl">
+				<!--<a class="tab-item" href="#" onclick="window.open('{{playlist.twitter}}, '_system', 'location=yes'); return false;" >
+				<i class="icon ion-social-twitter"></i>
+				Follow 
+				</a>
+				<a  class="tab-item" href="#" ng-click="window.open('{{playlist.facebook}}', '_system', 'location=yes'); return false;">
+				<i class="icon ion-social-facebook"></i>
+				Like 
+				</a>
+				<p ng-bing-html="twitter"></p>
+				<p ng-bing-html="facebook"></p>
+				-->
+				<button class="button button-clear button-positive    ion-android-share" ng-click="shareAnywhere()">
+					Share
+				</button>
+			</div>
+		</div>
+	</ion-content>
+
+	<!--<ion-content>
 		<h3>
 			Stream songs
 		</h3>
@@ -15,8 +72,5 @@
 				</p>
 			</div>
 		</div>
-
-
-		
-	</ion-content>
+	</ion-content>-->
 </ion-view>

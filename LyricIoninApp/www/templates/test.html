@@ -1,0 +1,27 @@
+<ion-view view-title="Afrizik testing">
+	<ion-content class="padding" ng-controller="PlaylistsCtrl">
+	<div ng-repeat="artist in playlists" >
+		<div class="row" ng-if= "$even">
+			<div class="col col-50" >
+				<a href="#/app/playlist/{{artist.id}}">
+				<img src="data:image/png;base64,{{artist.thumbnail.base64}}" alt="img/musique.png" class="homeImgbgd" />
+				</a>
+				<span class="afrizik-banner ">{{ artist.name }}</span>
+			</div>
+			<div class="col col-50" >
+				<a href="#/app/playlist/{{artist[$index + 1].id}}">
+				<img data-ng-src="data:image/png;base64,{{artist.thumbnail.base64}}" alt="../img/musique.png" class="homeImgbgd" />
+				</a>
+				<span class="afrizik-banner ">{{ artist.name}}</span>
+			</div>
+			<!--<div class="col col-50" >
+				<a href="#/app/playlist/{{artist.id}}">
+				<img data-ng-src="data:image/png;base64,{{artist.thumbnail.base64}}" data-err-src="images/png/avatar.png" class="homeImgbgd" />
+				</a>
+				<span class="badge ion-ios-play-outline "> {{ artist.name }}</span>
+			</div>-->
+		</div>
+	</div>
+	</ion-content>
+
+</ion-view>

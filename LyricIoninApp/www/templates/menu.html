@@ -29,21 +29,27 @@
 				&nbsp; Home
 			</ion-item >
 			<ion-item nav-clear menu-close href="#/app/soundcloud">
-				<i class="icon ion-cloud custom-icon">
+				<i class="icon ion-ipod custom-icon">
 				</i>
-				&nbsp; Soundcloud
+				&nbsp; Audio
 			</ion-item>
-			<ion-item nav-clear menu-close ng-click="login()">
-				<i class="icon ion-star custom-icon">
+			<ion-item nav-clear menu-close href="#/app/localevents">
+				<i class="icon ion-calendar custom-icon">
 				</i>
-				&nbsp; Rate this app
+				&nbsp; Local Events
 			</ion-item>
 			<ion-item nav-clear menu-close href="#/app/about">
 				<i class="icon ion-information-circled custom-icon">
 				</i>
 				&nbsp; About
 			</ion-item>
-			<ion-item nav-clear menu-close ng-controller="ShareCtrl" ng-click="FeedbackMail()">
+			<ion-item nav-clear menu-close ng-click="login()" href="#">
+				<i class="icon ion-star custom-icon">
+				</i>
+				&nbsp; Rate this app
+			</ion-item>
+			<ion-item nav-clear menu-close ng-controller="ShareCtrl" ng-click="FeedbackMail()" href
+			="#">
 				<i class="icon ion-email custom-icon">
 				</i>
 				&nbsp; Send Feedback

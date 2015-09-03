@@ -1,34 +1,47 @@
 <ion-view view-title="Profile">
-	<ion-nav-buttons side="left">
-		<button class="button  button-clear ion-android-person"></button>
-	</ion-nav-buttons>
-	<ion-nav-buttons side="right">
-		<button class="button  button-clear ion-android-more-vertical"></button>
-	</ion-nav-buttons>
-	<ion-content class="padding">
-		<!-- Artrist image and name -->
-		<div class="artist_profile">
-			<div class="col col-40 col-offset-60">
-				<img class="item item-avatar" ng-src="{{artist.thumbnail}}" alt="img/avatar.png">
-				<h3>{{artist.name}}</h3>
-			</div>
-		</div><!-- end -->
-		<br><br><br>
-		<!--profile tabs -->
-		<div class="">
-			<ion-tabs class="tabs-dark tabs-striped tabs-top tabs-icon-top">
-				<ion-tab title="" icon="ion-gallery energized" >
-					<ion-content class="padding">
-						Album list 
-					</ion-content>
-				</ion-tab>
-				<ion-tab title="" icon="ion-stat energized">
-					<ion-content class="padding">
-						Artist Stage performance. Live videos
-					</ion-content>
-				</ion-tab>
-			</ion-tabs>
-		</div>
+	<ion-nav-buttons side="right" >
+        <button class="button button-dark button-clear button-icon icon ion-more"></button>
+    </ion-nav-buttons>
+	<ion-content class="artist_profile" >
+	<br><br>
+		<ion-tabs class="tabs-energized tabs-striped tabs-top tabs-icon-top">
+			<ion-tab title="Profile info" icon="ion-stats-bars dark" >
+				<ion-content padding="true" class="has-header">
+					<br><br>
+						<div class="artist_profile">
+						<p style="
+    margin: -29px 142px 10px;
+    top: 100px;
+    left: 50px;
+    position: relative;
+    color: white;
+    font-size: large;
+">  
+<img class= "img-circle" ng-src="img/x-maleya.jpg" alt="Background MD" width="100">
+artist</p></div>
+						
+		
+				</ion-content>
+			</ion-tab>
 
+			<ion-tab title="Biography" icon="ion-bookmark dark">
+				
+				<ion-content padding="true" class="has-header" ng-controller="categoriesCtrl">
+					<ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+					</ion-refresher>
+					
+				</ion-content>
+			</ion-tab>
+			<ion-tab title="Stage Performance" icon="ion-film-marker dark" >
+				<ion-content padding="true" class="has-header">
+					<br>
+					
+					<ion-refresher pulling-text="" on-refresh="doRefresh()" class="refreshIcon">
+					</ion-refresher>
+							
+					<strong>Top Songs</strong>
+				</ion-content>
+			</ion-tab>
+		</ion-tabs>
 	</ion-content>
 </ion-view>

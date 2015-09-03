@@ -82,14 +82,15 @@ h3{
   border-style: solid;
   font-size: 16px;
 }*/
-/*Categories item list black
-.item-complex .item-content, .item-radio .item-content {
-  position: relative;
-  z-index: 2;
-  padding: 16px 49px 16px 16px;
-  border: none;
-  background-color: #212121;
-}*/
+/*Categories item list black*/
+.item-complex .item-content {
+    position: relative;
+    z-index: 2;
+    padding: 16px 49px 16px 16px;
+    border: none;
+    background-color: #212121;
+    color: #FFC900;
+}
 
 .homeImgbgd{
 	/*background: url(img/x-maleya.jpg);*/
@@ -125,19 +126,75 @@ h3{
 
 /*Artist profile*/
 .artist_profile{
-  background: url('../img/material-graphite.jpg') no-repeat center center fixed;
-  background-size: 100%;
-  position: relative;
-
+    background: url(../img/material-graphite.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 280px;
+    margin: auto;
+    z-index: 2;
+    position: relative;
 }
 
 /*Show laoder during iframe content loading*/
 .iframe_loader{
   background:url(../img/loader.gif) center center no-repeat;
  }
- /*list item background*/
+ /*list item background
  .item-complex .item-content, .item{
     background-color: #212121;
     color: #FFF;
     border-color: #212121;
+}*/
+/*
+#custom-span{
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}*/
+
+.afrizik-banner{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  top: -27px;
+  width: 100%;
+  padding: 9px 20px;
+  background: inherit;
+  background-attachment: fixed;
+  overflow: hidden;
+  background-color: #212121;
+  color: yellow;
+  opacity: .7;
+  font-weight: bold;
+}
+
+/*Custom list color
+.platform-android .popover .item {
+    border-color: #3C3434;
+    background-color: #FFC900;
+    color: #000;
+}*/
+/*Add circle round*/
+.custom-span {
+    padding: 5px 10px;
+    display: inline-block;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    -moz-box-shadow: 0px 0px 2px #888;
+    -webkit-box-shadow: 0px 0px 2px #888;
+    box-shadow: 0px 2px 10px #888;
+
+}
+/*Custom a round profile image*/
+.img-circle {
+    position: relative;
+    margin: 0 auto;
+    height: 100px;
+    width: 100px;
+    border: 1px solid #2B2B2B;
+    border-radius: 500px;
+    -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,0.25);
 }
