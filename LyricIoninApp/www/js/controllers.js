@@ -85,7 +85,7 @@ angular.module('starter.controllers', ['ngSanitize'])
         })
 
 //Retrieve the playlist (one song) from the ArtistService service
-        .controller('PlaylistCtrl', function ($scope, $stateParams, $http, $state, $ionicLoading, $sce, ArtistService, $ionicActionSheet, $ionicPopover) {
+        .controller('PlaylistCtrl', function ($scope, $stateParams, $http, $state, $ionicLoading, $sce, ArtistService, $ionicActionSheet, $ionicPopover, $cordovaSocialSharing) {
             $scope.playlist = {};
             //Get the param of the current url
             console.log($stateParams);
@@ -159,10 +159,12 @@ angular.module('starter.controllers', ['ngSanitize'])
                     console.log('BUTTON CLICKED', index);
                     switch(index){
                         case 0:
-                            $state.go('app.userprofile');
+                            var youtube_search = "https://www.youtube.com/results?search_query=";
+                            window.open(""+ youtube_search + $scope.playlist.name +"'", '_system', 'location=yes')
                             break;
                         case 1:
-                            $state.go('app.about');
+                            $cordovaSocialSharing.share("Afrizik is awesome. I just Discovered a new artist. Download it on the link below",
+                            "Afrizik", "www/img/afrizik.png", "http://afrizik.firebaseapp.com");
                             break;
                         case 2:
                             $state.go('app.supportartist');
@@ -188,29 +190,7 @@ angular.module('starter.controllers', ['ngSanitize'])
         /*Retrieve a genre of songs from soundcloud and dispaly to user*/
         .controller('SoundCloudCtrl', function ($scope, $state, $ionicModal, SCService) {
             $scope.m ;
-            
-/*
-            $scope.SCsearch = [
-                {
-                  type: 'button-icon ion-compose',
-                  tap: function(e) {
-                    $scope.openModal();
-                  }
-                }
-              ];
-            $scope.openModal = function() {
-                $scope.modal.show();
-              };
-            $scope.closeModal = function() {
-                $scope.modal.hide();
-              };
-            $ionicModal.fromTemplateUrl('templates/SCsearchmodal.html', function(modal) {
-                $scope.modal = modal;
-              }, {
-                animation: 'slide-in-up',
-                focusFirstInput: true
-              });   */
-            
+                        
             
                 //console.log(sc_search);
              SCService.GetSCUser('locko').then(function(list){
@@ -490,7 +470,7 @@ angular.module('starter.controllers', ['ngSanitize'])
             $scope.shareAnywhere = function () {
 
                 $cordovaSocialSharing.share("Discover, Enjoy and Support Local Music with Afrizik",
-                        "Afrizik", "www/img/afrizik.png", "http://blog.arnoldchuenffo.com");
+                        "Afrizik", "www/img/afrizik.png", "http://afrizik.firebaseapp.com");
             }
             //Help us improve the app by sending feedbacks
             $scope.FeedbackMail = function () {

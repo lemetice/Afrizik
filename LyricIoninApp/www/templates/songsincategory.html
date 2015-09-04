@@ -1,25 +1,25 @@
 <ion-view view-title="Artists/songs">
 	<ion-content>
 		<h3>
-			List of artists/songs
+			
 		</h3>
 		<div>
-			<ion-list item-icon-right style="color: white;">
+			<ion-list item-icon-right >
 				<ion-item class=" card item-thumbnail-left " ng-repeat="result in results" href="#/app/songdetail/{{result.id_song}}">
 					<img src="img/musique.png" alt="Artist" />
-					<h2>
+					<h2 style="color: white;">
 						Title: {{result.title}}
 					</h2>
-					<h2>
+					<h2 style="color: white;">
 						<strong>
 							{{result.lyric_by | uppercase}}
 						</strong>
 					</h2>
-					<i>
-						<span class="badge badge-dark icon-badge ion-more">
+						<span style="color: white;" class="custom-span ion-more">
 							
 						</span>
-					</i>
+					<i class="icon ion-chevron-right icon-accessory"></i>
+					
 				</ion-item>
 			</ion-list>
 		</div>
