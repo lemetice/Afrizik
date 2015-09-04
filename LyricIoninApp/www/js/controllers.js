@@ -130,12 +130,7 @@ angular.module('starter.controllers', ['ngSanitize'])
                  console.log("Error: " + error);
             });
 
-            /*Launch external link*/
-            $scope.GotoLink = function(url){
-                alert(url);
-                window.open("'" + url + "'", '_system', 'location=yes'); 
-                return false;
-            }
+            
             //Dropdwon for artist info
                 $ionicPopover.fromTemplateUrl('templates/playlistdropdown.html', {
                     scope: $scope,
@@ -147,14 +142,14 @@ angular.module('starter.controllers', ['ngSanitize'])
                 $state.go('app.userprofile');
             }
             //Action to for user to download or share song
-            $scope.showActionsheet = function($state) {
+            $scope.showActionsheet = function() {
     
                 $ionicActionSheet.show({
                   titleText: 'Afrizik Action',
                   buttons: [
-                    { text: '<i class="icon ion-arrow-down-b"></i> Download' },
+                    { text: '<i class="icon ion-arrow-down-b"> </i> Download' },
                     { text: '<i class="icon ion-share"> </i> Share' },
-                    { text: '<i class="ion-card" ></i>  Support' },
+                    { text: '<i class="icon ion-card blink"> </i> Support Artist' },
                   ],
                   destructiveText: 'Cancel',
                   cancel: function() {
@@ -162,8 +157,18 @@ angular.module('starter.controllers', ['ngSanitize'])
                   },
                   buttonClicked: function(index) {
                     console.log('BUTTON CLICKED', index);
-                    if(index == 1){
-                        $state.go(app.playlists);
+                    switch(index){
+                        case 0:
+                            $state.go('app.userprofile');
+                            break;
+                        case 1:
+                            $state.go('app.about');
+                            break;
+                        case 2:
+                            $state.go('app.supportartist');
+                            break;
+                        default:
+                            break;
                     }
                     return true;
                   },
@@ -183,11 +188,36 @@ angular.module('starter.controllers', ['ngSanitize'])
         /*Retrieve a genre of songs from soundcloud and dispaly to user*/
         .controller('SoundCloudCtrl', function ($scope, $state, $ionicModal, SCService) {
             $scope.m ;
-                console.log(sc_search);
-             SCService.GetSCUser(sc_search).then(function(list){
+            
+/*
+            $scope.SCsearch = [
+                {
+                  type: 'button-icon ion-compose',
+                  tap: function(e) {
+                    $scope.openModal();
+                  }
+                }
+              ];
+            $scope.openModal = function() {
+                $scope.modal.show();
+              };
+            $scope.closeModal = function() {
+                $scope.modal.hide();
+              };
+            $ionicModal.fromTemplateUrl('templates/SCsearchmodal.html', function(modal) {
+                $scope.modal = modal;
+              }, {
+                animation: 'slide-in-up',
+                focusFirstInput: true
+              });   */
+            
+            
+                //console.log(sc_search);
+             SCService.GetSCUser('locko').then(function(list){
                 $scope.m = list;
                 console.log('MMM:' + $scope.m);
              });
+
             /*
              $scope.SCsearch = function(){
                 $scope.modal.show();
@@ -496,7 +526,7 @@ angular.module('starter.controllers', ['ngSanitize'])
                 $scope.events.push({
                     "id": i,
                     "event_title": "MTN Innovation Challenge 2015", 
-                    "event_pic": "../img/devdays.jpg", 
+                    "event_pic": "img/devdays.jpg", 
                     "location":"Douala",
                     "venue":"Akwa",
                     "time": d.toLocaleTimeString(),
@@ -520,7 +550,7 @@ angular.module('starter.controllers', ['ngSanitize'])
             $scope.event = {
                     "id": 2,
                     "event_title": "MTN Innovation Challenge 2015", 
-                    "event_pic": "../img/devdays.jpg", 
+                    "event_pic": "img/devdays.jpg", 
                     "location":"Douala",
                     "venue":"Akwa",
                     "time": d.toLocaleTimeString(),

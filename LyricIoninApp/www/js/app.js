@@ -214,6 +214,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter
                         }
                     })
 
+                    //Support artist state
+                    .state('app.supportartist', {
+                        url: "/supportartist",
+                        views: {
+                            'menuContent': {
+                                templateUrl: "templates/test.html",
+                                controller:"PlaylistCtrl"
+                            }
+                        }
+                    })
+
                     //Info about the app
                     .state('app.about', {
                         url: "/about",
