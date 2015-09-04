@@ -220,7 +220,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter
                         views: {
                             'menuContent': {
                                 templateUrl: "templates/test.html",
-                                controller:"PlaylistCtrl"
+                                controller:"supportArtistCtrl"
                             }
                         }
                     })

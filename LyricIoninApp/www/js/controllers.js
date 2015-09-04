@@ -188,15 +188,15 @@ angular.module('starter.controllers', ['ngSanitize'])
 
         })
         /*Retrieve a genre of songs from soundcloud and dispaly to user*/
-        .controller('SoundCloudCtrl', function ($scope, $state, $ionicModal, SCService) {
+        .controller('SoundCloudCtrl', function ($scope, $state, $sce, $ionicModal, $ionicLoading, SCService ) {
             $scope.m ;
                         
             
-                //console.log(sc_search);
+                /*console.log(sc_search);
              SCService.GetSCUser('locko').then(function(list){
                 $scope.m = list;
                 console.log('MMM:' + $scope.m);
-             });
+             });*/
 
             /*
              $scope.SCsearch = function(){
@@ -207,13 +207,21 @@ angular.module('starter.controllers', ['ngSanitize'])
                   }, {
                     animation: 'slide-in-up',
                     focusFirstInput: true
-                  });
-             Fetching makossa tracks {q: 'Germany', limit:20, linked_partitioning: 1}
-            SC.get('/tracks', {genres: 'rap'}, function (tracks) {
+                  });*/
+            // Fetching makossa tracks {q: 'Germany', limit:20, linked_partitioning: 1}
+                $ionicLoading.show();
+            SC.get('/tracks', {genres: 'hiphop', limit:2}, function (tracks) {
                 $scope.song_tracks = tracks;
-                //console.log($scope.song_tracks);
+                console.log($scope.song_tracks);
+                $ionicLoading.hide();
             })
-                */
+                /*Play the song*/
+                $scope.play = function(track_url){
+                    SC.oEmbed(track_url, { auto_play: true }, function(oEmbed) {
+                    $scope.$apply($scope.player_html = $sce.trustAsHtml(oEmbed.html));
+                    });
+                }
+
             //direct the user to soundcloud login page and get his profile info
             $scope.soundCloudLogin = function () {
                 // initialize client with app credentials
@@ -267,9 +275,15 @@ angular.module('starter.controllers', ['ngSanitize'])
 
         })
 
-        //Swiping informative images at the start or launch of the app
-        .controller('slideBoxCtrl', function ($scope, $ionicModal) {
+        //MTN Mobile money API
+        .controller('supportArtistCtrl', function ($scope, $timeout, $ionicLoading) {
+                $scope.MTNpayment = function(){
+                    $timeout(function() {
 
+                    $ionicLoading.show();
+                    //alert("Enter amount");
+                }, 1000);
+                }
         })
 
         //Retrieve all songs under a particular category from the SQLite db

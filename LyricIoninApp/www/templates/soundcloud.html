@@ -8,36 +8,29 @@
 		<div class="item item-divider">
 			<br><br>
 			<strong>Local Artists</strong>
-			<label class="item item-input">
+			<!---<label class="item item-input">
 			    <i class="icon ion-search placeholder-icon"></i>
 			    <input type="text" ng-model="sc_search" placeholder="Search artist">
 			 </label>
-		</div>
-			<!--- Adding a grid view .....................-->
+		</div>Adding a grid view .....................-->
+			 
 		<div class="row" ng-repeat="track in  song_tracks" ng-if="$index % 2 === 0">
 	        <div class="col col-50" ng-if="$index <  song_tracks.length">
-	            <a href="#/app/soundcloud/{{song_tracks[$index].id}}">
+	            <a href="#" ng-click="play(song_tracks[$index].permalink_url)">
 	            	<img ng-src="{{ song_tracks[$index ].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
 	            </a>
+				<span class="stable"> {{ song_tracks[$index +1].user.name }}</span>
 	        </div>
 	        <div class="col col-50" ng-if="$index + 1 <  song_tracks.length">
-	        	<a href="#/app/soundcloud/{{song_tracks[$index].id}}">
+	        	<a href="#" ng-click="play(song_tracks[$index].permalink_url)">
 	           		<img ng-src="{{ song_tracks[$index +1].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
 	           	</a>
 				<span class="stable"> {{ song_tracks[$index +1].user.name }}</span>
-	        </div><!--
-	        <div class="col col-25" ng-if="$index + 2 <  song_tracks.length">
-	        	<a href="#/app/soundcloud/{{song_tracks[$index].id}}">
-	            	<img ng-src="{{ song_tracks[$index +2].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
-	            </a>
-			</div>
-        	<div class="col col-25" ng-if="$index + 3 <  song_tracks.length">
-        		<a href="#/app/soundcloud/{{song_tracks[$index].id}}">
-            		<img ng-src="{{ song_tracks[$index +3].artwork_url}}" width="100%"  class="artistImg" alt="Artist#" />
-            	</a>
-        	</div>-->
+	        </div>
+	        
 		</div>
 		<div class="card">
+	        <div ng-bind-html="player_html"></div>
 			<div class="item item-text-wrap">
 				<p>
 					Connect with SoundCloud, upload a photo and 
