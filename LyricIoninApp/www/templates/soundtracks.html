@@ -5,7 +5,6 @@
 
 	<ion-content ng-controller="SoundTrackCtrl">
 
-    <!--<button ng-click="playTrack()" class="btn-default"> play</button>-->
     <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/190951951" class="iframe_loader"></iframe>
     
     <!--<div ng-controller="CarouselCtrl" id="slides_control">
@@ -24,19 +23,18 @@
 
       <div >
       <ion-list item-icon-right>
-        <ion-item class=" card item-thumbnail-left " ng-repeat="artist in playlists" href="#">
-          <img data-ng-src="data:image/png;base64,{{artist.thumbnail.base64}}" data-err-src="images/png/avatar.png"/>
+        <ion-item class=" item-thumbnail-left " href="#/app/soundtrack/id">
+          <img data-ng-src="data:image/png;base64,{{artist.thumbnail.base64}}" alt="img/png/avatar.png"/>
           <h2>
             {{artist.name}}
           </h2>
           <h2>
             {{artist.facebook}}
           </h2>
-          <i>
-          <span class="badge custom-icon ion-heart">
-             
+            <span class="custom-span right ion-more">
+              
             </span>
-          </i>
+          <i class="icon ion-chevron-right icon-accessory"></i>
         </ion-item>
       </ion-list>
         

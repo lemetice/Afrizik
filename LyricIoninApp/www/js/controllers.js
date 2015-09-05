@@ -159,8 +159,11 @@ angular.module('starter.controllers', ['ngSanitize'])
                     console.log('BUTTON CLICKED', index);
                     switch(index){
                         case 0:
+                            $state.go('app.supportartist');
+                            /*
                             var youtube_search = "https://www.youtube.com/results?search_query=";
                             window.open(""+ youtube_search + $scope.playlist.name +"'", '_system', 'location=yes')
+                           */
                             break;
                         case 1:
                             $cordovaSocialSharing.share("Afrizik is awesome. I just Discovered a new artist. Download it on the link below",
@@ -210,7 +213,7 @@ angular.module('starter.controllers', ['ngSanitize'])
                   });*/
             // Fetching makossa tracks {q: 'Germany', limit:20, linked_partitioning: 1}
                 $ionicLoading.show();
-            SC.get('/tracks', {genres: 'hiphop', limit:2}, function (tracks) {
+            SC.get('/tracks', {genres: 'rock', limit:10}, function (tracks) {
                 $scope.song_tracks = tracks;
                 console.log($scope.song_tracks);
                 $ionicLoading.hide();

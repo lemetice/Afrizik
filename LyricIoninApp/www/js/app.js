@@ -7,7 +7,7 @@
 
 
 var db = null;
-angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter.services', 'ngSanitize', 'ui.bootstrap'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter.services', 'ngSanitize', 'ionic.contrib.ui.hscrollcards'])
 
 
         .run(function ($ionicPlatform, $rootScope, $cordovaNetwork, $ionicPopup, $ionicLoading, $cordovaSQLite) {

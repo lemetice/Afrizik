@@ -141,19 +141,7 @@ h3{
 .iframe_loader{
   background:url(../img/loader.gif) center center no-repeat;
  }
- /*list item background
- .item-complex .item-content, .item{
-    background-color: #212121;
-    color: #FFF;
-    border-color: #212121;
-}*/
-/*
-#custom-span{
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-}*/
-
+ 
 .afrizik-banner{
   position: relative;
   bottom: 0;
@@ -169,7 +157,14 @@ h3{
   opacity: .7;
   font-weight: bold;
 }
-
+/*custom list items*/
+.item h2 {
+    margin: 0 0 2px 0;
+    font-size: 16px;
+    font-weight: normal;
+    color: #FFC900;
+    text-align: center;
+}
 /*Custom list color
 .platform-android .popover .item {
     border-color: #3C3434;
@@ -216,4 +211,12 @@ h3{
   -moz-animation: blink 1s linear infinite;
   animation: blink 1s linear infinite;
   font-size: 24px;
+}
+
+/*scrolling items */
+ion-scroll .item {
+  display: inline-block; 
+  margin: 0; 
+  width:200px; 
+  height:200px
 }
