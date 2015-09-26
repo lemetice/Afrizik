@@ -212,8 +212,9 @@ angular.module('starter.controllers', ['ngSanitize'])
                     focusFirstInput: true
                   });*/
             // Fetching makossa tracks {q: 'Germany', limit:20, linked_partitioning: 1}
-                $ionicLoading.show();
-            SC.get('/tracks', {genres: 'rock', limit:10}, function (tracks) {
+                alert("Please wait... song loading...");
+                //$ionicLoading.show();
+            SC.get('https://api.soundcloud.com/tracks', {genres: 'rock', limit:10}, function (tracks) {
                 $scope.song_tracks = tracks;
                 console.log($scope.song_tracks);
                 $ionicLoading.hide();
@@ -274,8 +275,14 @@ angular.module('starter.controllers', ['ngSanitize'])
             ];
         })
 
-        .controller("categoryCtrl", function ($scope, $stateParams) {
+        .controller("IntroCtrl", function ($scope, $ionicSlideBoxDelegate, $state) {
+            $scope.navSlide = function(index){
+                $ionicSlideBoxDelegate.slide(index,500);
+            }
 
+            $scope.start = function(){
+                $state.go('app.supportartist');
+            }
         })
 
         //MTN Mobile money API
@@ -523,7 +530,7 @@ angular.module('starter.controllers', ['ngSanitize'])
                 $scope.events.push({
                     "id": i,
                     "event_title": "MTN Innovation Challenge 2015", 
-                    "event_pic": "img/devdays.jpg", 
+                    "event_pic": "../img/mtn.jpg", 
                     "location":"Douala",
                     "venue":"Akwa",
                     "time": d.toLocaleTimeString(),
@@ -541,13 +548,13 @@ angular.module('starter.controllers', ['ngSanitize'])
 
         })
 
-        /*Carousel controller*/
+        /*LocalEventDetail controller*/
         .controller('LocalEventDetailCtrl', function ($scope) {
             var d = new Date();
             $scope.event = {
                     "id": 2,
                     "event_title": "MTN Innovation Challenge 2015", 
-                    "event_pic": "img/devdays.jpg", 
+                    "event_pic": "../img/material-graphite.jpg", 
                     "location":"Douala",
                     "venue":"Akwa",
                     "time": d.toLocaleTimeString(),

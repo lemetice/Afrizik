@@ -1,0 +1,146 @@
+/* Empty. Add your own CSS if you like */
+/*Intro page style*/
+body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+
+a {
+  text-decoration: none; }
+  a:hover, a:focus {
+    text-decoration: none; }
+
+
+.slide-intro {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center; }
+  .slide-intro .slide-intro-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: table; }
+    .slide-intro .slide-intro-wrapper .info {
+      display: table-cell;
+      vertical-align: middle; }
+
+#page-intro {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  #page-intro .slider {
+    height: 100%; }
+  #page-intro #slide-intro-1 {
+    background: url("../img/material-graphite.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+    #page-intro #slide-intro-1:before {
+      content: ' ';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6); }
+  #page-intro #slide-intro-2 {
+    background: url("../img/intro_bg2.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+    #page-intro #slide-intro-2:before {
+      content: ' ';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6); }
+  #page-intro .slide-intro .info .logo span {
+    font-family: 'Berkshire Swash';
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 50px;
+    display: inline-block; }
+  #page-intro .slide-intro .info p {
+    color: #f0f0f0;
+    margin-bottom: 0; }
+  #page-intro .button-get-started {
+    min-width: 170px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    margin-left: -85px; }
+p{
+  font-size: 15px;
+}
+
+/*Borrowed styles for local events*/
+
+.cate-lv1 {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .cate-lv1 .cate-lv1-item {
+    display: table;
+    width: 100%;
+    height: 140px;
+    margin-bottom: 2px;
+    position: relative; }
+    .cate-lv1 .cate-lv1-item:last-child {
+      margin-bottom: 0; }
+    .cate-lv1 .cate-lv1-item.item-background:before {
+      content: ' ';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6); }
+    .cate-lv1 .cate-lv1-item .item-wrapper {
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      z-index: 1; }
+      .cate-lv1 .cate-lv1-item .item-wrapper h2 {
+        font-size: 30px;
+        color: #FFFFFF;
+        margin-bottom: 5px; }
+      .cate-lv1 .cate-lv1-item .item-wrapper p {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0; }
+
+.cate-lv2 .cate-lv2-item {
+  margin: 5px 10px; }
+  .cate-lv2 .cate-lv2-item:first-child {
+    margin-top: 10px; }
+  .cate-lv2 .cate-lv2-item:last-child {
+    margin-bottom: 10px; }
+  .cate-lv2 .cate-lv2-item .item > img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px; }
+  .cate-lv2 .cate-lv2-item .item h2 {
+    text-transform: uppercase; }
+  .cate-lv2 .cate-lv2-item .item .price {
+    font-weight: 600;
+    color: #86d44d;
+    display: block;
+    width: 80px;
+    position: absolute;
+    bottom: 10px; }
+  .cate-lv2 .cate-lv2-item .item .like {
+    color: #cccccc;
+    position: absolute;
+    bottom: 10px;
+    right: 15px; }
+

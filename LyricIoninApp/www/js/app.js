@@ -104,7 +104,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter
              }) */
 
             $stateProvider
-
+                    //Introductory state
+                    .state('intro', {
+                        url: "/intro",
+                        templateUrl: "templates/intro.html",
+                        controller: 'IntroCtrl'
+                    })
+                    
+                    //Main App
                     .state('app', {
                         url: "/app",
                         abstract: true,
@@ -230,12 +237,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'starter
                         url: "/about",
                         views: {
                             'menuContent': {
-                                templateUrl: "templates/about.html"
+                                templateUrl: "templates/about.html",
                             }
                         }
                     })
-
                     ;
             // if none of the above states are matched, use this as the fallback
-            $urlRouterProvider.otherwise('/app/playlists');
+            $urlRouterProvider.otherwise('/intro');
         });

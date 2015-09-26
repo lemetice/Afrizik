@@ -1,9 +1,9 @@
 /*#####################
  Working with sample data 
 #######################*/
-/*checking internet connection before injecting the firebase module*/
+/*checking internet connection before injecting the firebase module 'firebase' */
 
-angular.module('starter.services', ['firebase'])
+angular.module('starter.services', [])
 
 .factory('PersonService', function ($http) {
     var BASE_URL = "http://api.randomuser.me/";

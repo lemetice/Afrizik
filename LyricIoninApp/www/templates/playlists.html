@@ -12,7 +12,7 @@
 						
 					</div>
 					
-					<ion-refresher pulling-text="" on-refresh="doRefresh()" class="refreshIcon">
+					<ion-refresher on-refresh="doRefresh()" spinner="spiral">
 					</ion-refresher>
 					<div class="item item-divider item-divider-bg">
 							
@@ -20,7 +20,7 @@
 						
 					</div>
 
-       <div ng-repeat="artist in playlists" >
+       <div ng-repeat="artist in playlists | orderBy: 'name'" >
 
 		<div class="row" ng-if= "$index % 2 ===0">
 			<div class="col col-50" >

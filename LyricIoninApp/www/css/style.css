@@ -212,11 +212,8 @@ h3{
   animation: blink 1s linear infinite;
   font-size: 24px;
 }
-
-/*scrolling items */
-ion-scroll .item {
-  display: inline-block; 
-  margin: 0; 
-  width:200px; 
-  height:200px
+/*Custom spinner*/
+.spinner svg {
+  stroke: #FFC900;
+  fill: #FFC900;
 }

@@ -2,10 +2,10 @@
 <widget id="com.ionicframework.lyricioninapp747906" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>AfriZik</name>
   <description>
-        Discover and support local musique.
+        Discover, Enjoy and support local music.
     </description>
   <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+      Arnold Chuenffo
     </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -15,6 +15,7 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen" />
   <preference name="SplashScreenDelay" value="5000" />
+  <preference name="orientation" value="portrait" />
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>

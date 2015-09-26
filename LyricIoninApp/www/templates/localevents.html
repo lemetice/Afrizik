@@ -1,24 +1,26 @@
-<ion-view view-title="Local events">
+<ion-view view-title="Events">
     <ion-nav-buttons side="right" >
-        <button class="button  button-dark button-clear ion-android-search" ng-click="LEsearch()">
+        <button class="button  button-dark button-clear " ng-click="LEsearch()">
         </button>
     </ion-nav-buttons>
 <ion-content>
-    <div  class="grid">
-        <div class="row" ng-repeat="event in events" >
-            <div class="card padding" >
-                <a href="#/app/localevents/{{event.id}}">
-                    <img class="full-image" ng-src="{{event.event_pic}}" width="100%"/>
-                    <span>{{ event.event_title }}</span>
-                </a>
-            </div>
-            <!--
-            <div class="col col-50" ng-if="$index + 1 < events.length">
-                <img ng-src="{{events[$index + 1].event_pic}}" width="100%"/>
-                <span> event {{ events[$index+1].id}}</span>
-            </div>
-            -->
-        </div>
-    </div>
+    
+      <ul class="cate-lv1">
+            <li class="item-background cate-lv1-item" ng-repeat="event in events" href="#/app/localevents/{{event.id}}"
+            style="background: url({{event.event_pic}}) no-repeat; background-size: cover;">
+                <div class="item-wrapper">
+                    <h2>{{event.event_title}}</h2>
+                    <p>{{event.location}}</p>
+                </div>
+            </li>
+        </ul>
+      
+      <!-- 
+        <hscroller>
+        <hcard ng-repeat="event in events" index="{{$index}}" desc="{{event.event_title}}" image="{{event.event_pic}}" ng-click="play(item.permalink_url)">
+        
+        </hcard>
+        </hscroller>
+      -->
 </ion-content>
 </ion-view>
