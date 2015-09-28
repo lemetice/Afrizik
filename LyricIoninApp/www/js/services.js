@@ -1,9 +1,9 @@
+/*Author: Arnold Chuenffo  */
 /*#####################
  Working with sample data 
 #######################*/
-/*checking internet connection before injecting the firebase module 'firebase' */
 
-angular.module('starter.services', [])
+angular.module('starter.services', ['firebase'])
 
 .factory('PersonService', function ($http) {
     var BASE_URL = "http://api.randomuser.me/";

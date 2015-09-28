@@ -6,8 +6,8 @@
 <ion-content>
     
       <ul class="cate-lv1">
-            <li class="item-background cate-lv1-item" ng-repeat="event in events" href="#/app/localevents/{{event.id}}"
-            style="background: url({{event.event_pic}}) no-repeat; background-size: cover;">
+            <li class="item-background cate-lv1-item" ng-repeat="event in events" ui-sref="app.eventdetail({id: event.id})"
+            style="background: url({{event.event_pic}}) no-repeat; background-size: cover;" >
                 <div class="item-wrapper">
                     <h2>{{event.event_title}}</h2>
                     <p>{{event.location}}</p>

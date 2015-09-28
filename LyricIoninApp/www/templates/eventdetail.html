@@ -2,14 +2,17 @@
 	<ion-nav-buttons side="right" >
 		<button class="button  button-dark button-clear icon ion-share" >
         </button>
-        <button class="button  button-dark button-clear icon ion-location" >
+        <button class="button  button-dark button-clear icon ion-location"  ng-click="showMap()">
         </button>
     </ion-nav-buttons>
 	<ion-content class="padding">
-		<div class="card padding">
+		<div class="cate-lv1-item">
 			<div >
 				<img class="full-image" ng-src="{{event.event_pic}}" alt="../img/devdays.jpg" >
 			</div>
+			<div class="item item-divider">
+				Location	
+			</div>{{event.location}}.<br> Tap location icon above to see on Map
 			<div class="item item-divider">
 				Description	
 			</div>{{event.event_desc}}
@@ -24,7 +27,7 @@
 				<i class="icon ion-social-twitter"></i>
 				Follow 
 				</a>
-				<a class="tab-item" href="#" ng-click="window.open('http://www.google.com', '_system', 'location=yes'); return false;" >
+				<a class="tab-item" href="#" >
 				<i class="icon ion-social-facebook"></i>
 				Like 
 				</a>

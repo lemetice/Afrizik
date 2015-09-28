@@ -549,7 +549,7 @@ angular.module('starter.controllers', ['ngSanitize'])
         })
 
         /*LocalEventDetail controller*/
-        .controller('LocalEventDetailCtrl', function ($scope) {
+        .controller('LocalEventDetailCtrl', function ($scope, $ionicModal) {
             var d = new Date();
             $scope.event = {
                     "id": 2,
@@ -567,6 +567,23 @@ angular.module('starter.controllers', ['ngSanitize'])
                                     • Enforce MTNC relationship with \
                                     developers’ community"
                 };
+            
+            
+            $ionicModal.fromTemplateUrl('templates/test.html', {
+                    scope:$scope,
+                    animation: 'slide-in-up'
+            }).then(function (modal){
+                $scope.modal = modal;
+             });
+             
+             //open Location on map
+             $scope.showMap = function(){
+                 $scope.modal.show();
+             }
+             // Triggered in the map modal to close it
+             $scope.closeModal = function () {
+             $scope.modal.hide();
+        };
             
         })
         /*//Popover or dropdown menu

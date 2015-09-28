@@ -1,47 +1,55 @@
 <ion-view view-title="Profile">
-	<ion-nav-buttons side="right" >
-        <button class="button button-dark button-clear button-icon icon ion-more"></button>
+    <ion-nav-buttons side="right" >
+		<button class="button  button-dark button-clear " >
+        </button>
     </ion-nav-buttons>
-	<ion-content class="artist_profile" >
-	<br><br>
-		<ion-tabs class="tabs-energized tabs-striped tabs-top tabs-icon-top">
-			<ion-tab title="Profile info" icon="ion-stats-bars dark" >
-				<ion-content padding="true" class="has-header">
-					<br><br>
-						<div class="artist_profile">
-						<p style="
-    margin: -29px 142px 10px;
-    top: 100px;
-    left: 50px;
-    position: relative;
-    color: white;
-    font-size: large;
-">  
-<img class= "img-circle" ng-src="img/x-maleya.jpg" alt="Background MD" width="100">
-artist</p></div>
-						
-		
-				</ion-content>
-			</ion-tab>
+    
+    <ion-content id="page-profile" class="header-background" scroll="false">
+        <!--<ion-header-bar align-title="center">
+            <div class="buttons">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </div>
+            <h1 class="title">Profile</h1>
+        </ion-header-bar>-->
 
-			<ion-tab title="Biography" icon="ion-bookmark dark">
-				
-				<ion-content padding="true" class="has-header" ng-controller="categoriesCtrl">
-					<ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
-					</ion-refresher>
-					
-				</ion-content>
-			</ion-tab>
-			<ion-tab title="Stage Performance" icon="ion-film-marker dark" >
-				<ion-content padding="true" class="has-header">
-					<br>
-					
-					<ion-refresher pulling-text="" on-refresh="doRefresh()" class="refreshIcon">
-					</ion-refresher>
-							
-					<strong>Top Songs</strong>
-				</ion-content>
-			</ion-tab>
-		</ion-tabs>
-	</ion-content>
+        <div class="box">
+            <div class="info">
+                <div class="avatar">
+                    <img src="img/x-maleya.jpg" alt="avatar" />
+                </div>
+                <h2 class="name">Awesome Arnold</h2>
+                <div class="position">Muisc Lover</div>
+                <div class="links">
+                    <div class="row">
+                        <div class="col">
+                            <div class="number">125</div>
+                            <p>Followers</p>
+                        </div>
+                        <div class="col">
+                            <div class="number">47</div>
+                            <p>Following</p>
+                        </div>
+                        <div class="col">
+                            <div class="number">500</div>
+                            <p>Like</p>
+                        </div>
+                        <div class="col">
+                            <div class="number">10</div>
+                            <p>Favorites</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button ui-sref="app.localevents" class="button-follow button button-block button-outline button-light">
+                            Folllow
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </ion-content>
 </ion-view>

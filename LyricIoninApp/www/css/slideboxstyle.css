@@ -144,3 +144,53 @@ p{
     bottom: 10px;
     right: 15px; }
 
+/* PAGE PROFILE */
+#page-profile {
+  background: url("../img/intro_bg2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center; }
+  #page-profile:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); }
+  #page-profile .box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: table; }
+    #page-profile .box .info {
+      display: table-cell;
+      vertical-align: middle; }
+      #page-profile .box .info .avatar img {
+        width: 110px;
+        height: 110px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 5px solid rgba(255, 255, 255, 0.2); }
+      #page-profile .box .info h2.name {
+        margin-bottom: 10px;
+        color: #ffffff;
+        font-weight: normal; }
+      #page-profile .box .info .position {
+        color: rgba(225, 255, 255, 0.7);
+        margin-bottom: 130px; }
+      #page-profile .box .info .links {
+        color: #ffffff;
+        text-align: center; }
+        #page-profile .box .info .links .number {
+          display: block;
+          font-size: 30px;
+          font-weight: normal;
+          margin-bottom: 10px; }
+        #page-profile .box .info .links p {
+          margin-bottom: 0; }
+
+/* PAGE PROFILE */
